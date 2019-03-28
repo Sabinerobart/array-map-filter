@@ -24,6 +24,8 @@ Sortie attendue:
  */
 
 function keepStarks(names) {
+  const map = names.filter(x => x.endsWith(' Stark'));
+  return map;
 }
 
 // Ne pas modifier l'export

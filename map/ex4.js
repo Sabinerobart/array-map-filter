@@ -22,12 +22,12 @@ La fonction devra retourner, pour chaque rayon du tableau d'entrée, un objet ay
 où R est le rayon donné en entrée, C et S les valeurs que tu dois calculer.
 
 Exemple de tableau d'entrée :
-
-[1, 3, 4.5, 7]
-
+*/
+const radiuses = [1, 3, 4.5, 7];
+/*
 Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
 
-[
+const radiuses = [
   {
     radius: 1,
     circumference: "6.283",
@@ -50,11 +50,17 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
   }
 ]
 */
+const getCirclesProperties = (radiuses) => radiuses.map(x => {
+  const circ = 2 * Math.PI * x;
+  const surf = Math.PI * Math.pow(x, 2);
+  return {
+    circumference: circ.toFixed(3),
+    radius: x,
+    surface: surf.toFixed(3)
+  };
+})
 
-function getCirclesProperties(radiuses) {
-}
-
-
+console.log(getCirclesProperties(radiuses));
 
 // Ne pas modifier l'export
 module.exports = getCirclesProperties;

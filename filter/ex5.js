@@ -38,7 +38,10 @@ Exemple d'entrée:
 
  */
 
-function searchWordFilter(items, search) {
+const searchWordFilter = (items, search) => {
+  //new RegExp(search, 'i');
+  return items.filter(x => x.toUpperCase().includes(search.toUpperCase()));
+  //return items.filter(x => x.toUpperCase(x.indexOf(search.toUpperCase())) !== -1);
 }
 
 // Ne pas modifier l'export

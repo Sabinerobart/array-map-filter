@@ -33,7 +33,7 @@ Exemple d'entrée:
       rating: 60
     }
   ]
-En sortie:
+
   [
     {
       name: 'Crazy Rich Asians',
@@ -56,11 +56,13 @@ En sortie:
       label: 'fresh'
     }
   ]
+*/
+ 
 
- */
-
-function getMoviesFreshness(movies) {
-}
+const getMoviesFreshness = (movies) => movies.map(x => {
+  x.label = (x.rating < 60) ? movies.label = "rotten" : (x.rating >= 60 && x.rating < 75) ? x.label = "fresh" : x.label = "certified fresh";
+  return x;
+});
 
 
 

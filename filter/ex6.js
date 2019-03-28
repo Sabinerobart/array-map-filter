@@ -27,6 +27,14 @@ Sortie attendue:
 */
 
 function filterOffensiveComments(comments, bannedWords) {
+  const result=comments.filter(function(search){
+    for(i=0;i<bannedWords.length;i++){
+        if(search.toLowerCase().includes(bannedWords[i])){
+          return false;
+        } 
+    }return true;
+})
+return result;
 }
 
 // Ne pas modifier l'export
